@@ -22,6 +22,9 @@ function findPivot(arr) {
 
 function findIndexRotatedSortedArray(arr, target) {
     let pivot = findPivot(arr)
+    if(pivot == -1) {
+        return binarySearch(arr, 0, arr.length - 1, target)
+    }
     let ans = binarySearch(arr, 0, pivot, target)
     if(ans === -1) {
         ans = binarySearch(arr, pivot + 1, arr.length - 1, target)
