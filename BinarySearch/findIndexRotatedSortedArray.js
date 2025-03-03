@@ -1,4 +1,4 @@
-let arr = [1, 2, 3, 4, 5, 6, 7, 0]
+let arr = [0, 1, 2, 3, 4, 5, 6, 7]
 
 function findPivot(arr) {
     let length = arr.length
@@ -7,11 +7,13 @@ function findPivot(arr) {
     while(start <= end) {
         let mid = Math.floor((start + end) / 2)
         
-        if(arr[mid] > arr[mid + 1]) {
+        if(mid < end && arr[mid] > arr[mid + 1]) {
             return mid
-        } else if(arr[mid] < arr[mid + 1] && arr[mid] < arr[end]) {
-            end = mid
-        } else if(arr[mid] < arr[mid + 1] && arr[mid] > arr[end]) {
+        } else if(start < mid && arr[mid - 1] > arr[mid]) {
+            return mid - 1
+        } else if(arr[mid] < arr[end]) {
+            end = mid - 1
+        } else {
             start = mid + 1
         }
     }
@@ -42,4 +44,4 @@ function binarySearch(arr, start, end, target) {
     return -1
 }
 
-console.log(findIndexRotatedSortedArray(arr, 0))
+console.log(findIndexRotatedSortedArray(arr, 2))
