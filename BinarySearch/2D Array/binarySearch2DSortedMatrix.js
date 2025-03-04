@@ -4,7 +4,7 @@ let arr = [
         [20, 21, 23, 29]
     ]
     
-function binarySearch2DSortedArray(arr, target) {
+function binarySearch2DSortedMatrix(arr, target) {
     let rStart = 0, rEnd = arr.length - 1, cStart = 0, cEnd = arr[0].length - 1
     
     
@@ -48,4 +48,4 @@ function binarySearch(arr, row, target) {
 }
 
 
-console.log(binarySearch2DSortedArray(arr, 21))
+console.log(binarySearch2DSortedMatrix(arr, 21))
