@@ -1,32 +1,30 @@
-let arr = [6,5,4,3,24,3456,3456,53,2451,6,547,85,8,64846,21]
+// let arr = [6,5,4,3,24,3456,3456,53,2451,6,547,85,8,64846,21]
 
 
+let arr = [9, 8, 7, 6, 10, 4, 3, 2, 1]
 
-function quickSortRecursion(arr) {
-    if(arr.length === 1) return arr
+
+function quickSortRecursion(arr, start, end) {
+    if(start >= end) return
     
-    let start = 0, end = arr.length - 1
     let pivot = Math.floor(start + (end - start) / 2)
+    let pivotElement = arr[pivot]
     
-    let i = start, j = end
-    while(i < j) {
-        while(arr[i] < arr[pivot]) {
-            i++
+    let low = start, high = end
+    while(low <= high) {
+        while(arr[low] < pivotElement) low++
+        while(pivotElement < arr[high]) high--
+        
+        if(low <= high) {
+            [arr[low], arr[high]] = [arr[high], arr[low]]
+            low++
+            high--
         }
-        while(arr[pivot] < arr[j]) {
-            j--
-        }
-        [arr[i], arr[j]] = [arr[j], arr[i]]
-        i++
-        j--
     }
-    
-    let left = quickSortRecursion(arr.slice(start, pivot + 1))
-    let right = quickSortRecursion(arr.slice(pivot + 1, arr.length))
-    
-    arr = left.concat(right)
-    
-    return arr
+    quickSortRecursion(arr, start, high)
+    quickSortRecursion(arr, low, end)
 }
 
-console.log(quickSortRecursion(arr))
+quickSortRecursion(arr, 0, arr.length - 1)
+
+console.log(arr)
