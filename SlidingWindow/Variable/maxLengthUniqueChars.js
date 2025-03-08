@@ -1,7 +1,8 @@
 let str = 'aabacbebebe', k = 3 
 
 
-// find max length of subarray with k unique chars
+// Type 1: find max length of subarray with k unique chars
+// Type 2: Pick Toys
 
 function maxLengthUniqueChars(str, k) {
     let i = 0, j = 0, maxLength = -Infinity
