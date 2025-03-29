@@ -8,3 +8,5 @@ function ratMazeCountPath(row, col) {
 }
 
 console.log(ratMazeCountPath(3, 3))
+
+// 6
