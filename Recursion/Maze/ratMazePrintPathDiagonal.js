@@ -17,3 +17,17 @@ function ratMazePrintPathDiagonal(row, col, path = '') {
 }
 
 ratMazePrintPathDiagonal(3, 3)
+
+// CC
+// CDR
+// CRD
+// DCR
+// DDRR
+// DRC
+// DRDR
+// DRRD
+// RCD
+// RDC
+// RDDR
+// RDRD
+// RRDD
