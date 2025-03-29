@@ -14,3 +14,10 @@ function ratMazePrintPath(row, col, path = '') {
 }
 
 ratMazePrintPath(3, 3)
+
+// DDRR
+// DRDR
+// DRRD
+// RDDR
+// RDRD
+// RRDD
