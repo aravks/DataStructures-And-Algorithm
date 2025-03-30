@@ -10,7 +10,7 @@ function nQueen(matrix, row = 0) {
             continue
         }
         matrix[row][j] = 'Q'
-        count += nQueen(matrix, row + 1, j)
+        count += nQueen(matrix, row + 1)
         matrix[row][j] = ' '
     }
     
