@@ -1,4 +1,4 @@
-function nQueen(matrix, row = 0, col = 0) {
+function nQueen(matrix, row = 0) {
     if(row === matrix.length) {
         display(matrix)
         return 1
